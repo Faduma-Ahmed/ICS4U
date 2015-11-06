@@ -2,7 +2,6 @@ package Ahmed;
 
 
 
-import java.util.Calendar;
 import java.util.*;
 
 
@@ -15,13 +14,15 @@ import java.util.*;
  *
  */
 
-public class ContestantInformation {
+@SuppressWarnings("rawtypes")
+public class ContestantInformation implements Comparable {
 
 
 	private String firstName, apartmentNumber,streetAdress,lastName, city, postalCode,phoneNumber;
     private Province provinceName;
  	private int ageNumber;
     private String birthDate;
+    private String gender;
 
 
 	/**
@@ -36,12 +37,13 @@ public class ContestantInformation {
 	 * @param String city
 	 * @param Province province
 	 * @param String postalCode
-	 * @param  String phoneNumber
+	 * @param String phoneNumber
+	 * @param String gender
 	 * @throws InvalidInputException 
 	 * 
 	 */
 
-	public ContestantInformation(String firstName, String lastName, int ageNumber, int birthdate, String apartmentNumber, String streetAdress, String city, Province provinceName, String postalCode, String phoneNumber ) throws InvalidInputException
+	public ContestantInformation(String firstName, String lastName, int ageNumber, int birthdate, String apartmentNumber, String streetAdress, String city, Province provinceName, String postalCode, String phoneNumber, String gender ) throws InvalidInputException
 		{
 
 			setFirstName(firstName);
@@ -54,6 +56,8 @@ public class ContestantInformation {
 			setProvince(provinceName);
 			setPostalCode(postalCode);
 			setphoneNumber(phoneNumber);
+			setGender(gender);
+			
 		}
 
 
@@ -61,9 +65,21 @@ public class ContestantInformation {
 	 * Second Constructor for the class ContestantInformation.
 	 */
 	
-       public ContestantInformation()
+       @SuppressWarnings("unused")
+	public ContestantInformation()
 
 	 {
+    	   String firstName = " ";
+    	   String lastName = " ";
+    	   int ageNumber =0;
+    	   int birthdate = 0;
+    	   String apartmentNumber = " ";
+    	   String streetAdress = " ";
+    	   String city = " ";
+    	   Province provinceName= null;
+    	   String postalCode= " ";
+    	   String phoneNumber = " ";
+    	   String gender = " ";
 	
 	 }
    
@@ -86,13 +102,35 @@ public class ContestantInformation {
 	
 
 
-	/**
-	 *  Sets and formats the contestant's First Name using the received information.
-	 *   
-	 * @param  String firstName
-	 */
-
-	public void setFirstName(String firstName) throws InvalidInputException
+	
+     /**
+     * 
+     * Sets and formats the gender from the received information
+     * @param gender
+     * @throws InvalidInputException
+     */
+    public void setGender (String gender)throws InvalidInputException
+       {
+	  
+        if (gender.length()>1)
+        	
+        {
+        	throw new InvalidInputException ("Your gender is only 1 digit");
+        }
+        
+        this.gender=gender;
+       
+       
+       }
+	
+       
+       /**
+   	 *  Sets and formats the contestant's First Name using the received information.
+   	 *   
+   	 * @param  String firstName
+   	 * @throws InvalidInputException
+   	 */
+       public void setFirstName(String firstName) throws InvalidInputException
 		{
 		
 		for (int i = 0; i<firstName.length(); i++) {
@@ -110,6 +148,7 @@ public class ContestantInformation {
 	 *  Sets and formats the contestant's Last Name using the received information.
 	 *   
 	 * @param String lastName
+	 * @throws InvalidInputException
 	 */
 
 	public void setLastName(String lastName) throws InvalidInputException
@@ -128,9 +167,10 @@ public class ContestantInformation {
        	}
 
 	/**
-	 * Initializes the contestant's age .
+	 * Initializes the contestant's age 
 	 * 
 	 * @param int AgeNumber
+	 * @throws InvalidInputException
 	 */
 
 	public void setageNumber(int ageNumber) throws InvalidInputException
@@ -149,6 +189,7 @@ public class ContestantInformation {
      /**
 	 *  sets the contestant's birth date to whatever was given.
 	 * @param  String birthDate
+	 * @throws InvalidInputException
 	 */
 
 	public void setbirthDate(String birthDate) throws InvalidInputException
@@ -167,8 +208,7 @@ public class ContestantInformation {
 	
 
 	/**
-	 * Formats  and verifies the contestant's apartment number.
-	 * 
+	 * Formats  and verifies the contestant's apartment number
 	 * @param  String apartmentNumber
 	 * @throws InvalidInputException 
 	 */
@@ -188,6 +228,7 @@ public class ContestantInformation {
 	/**
 	 * Formats the contestant's street name.
 	 * @param String StreetAdress
+	 * @throws InvalidInputException
 	 */
 	public void setstreetAdress (String streetAdress) throws InvalidInputException
 		{
@@ -207,6 +248,7 @@ public class ContestantInformation {
 	/**
 	 *Formats the contestant's city.
 	 * @param String city
+	 * @throws InvalidInputException
 	 */
 	public void setcity(String city) throws InvalidInputException
 	{
@@ -223,6 +265,7 @@ public class ContestantInformation {
 	/**
 	 * Formats and verifies the contestant's province.
 	 * @param  Province ProvinceName
+	 * @throws InvalidInputException
 	 */
 	public void setProvince (Province provinceName)throws InvalidInputException 
                
@@ -233,6 +276,7 @@ public class ContestantInformation {
 	/**
 	 * Receives and verifies the contestant's postal code.
 	 * @param  String postalCode
+	 * @throws InvalidInputException
 	 */
 
 	public void setPostalCode(String postalCode) throws InvalidInputException
@@ -264,6 +308,7 @@ public class ContestantInformation {
     /**
 	 * Formats the contestant's phone number.
 	 * @param String phoneNumber
+	 * @throws InvalidInputException
 	 */
 	public void setphoneNumber(String phoneNumber) throws InvalidInputException
 	
@@ -280,18 +325,12 @@ public class ContestantInformation {
 		this.phoneNumber = ( "(" + phoneNumber.charAt(0) + phoneNumber.charAt(1) +phoneNumber.charAt(2) + ") " + phoneNumber.charAt(3) +phoneNumber.charAt(4) +phoneNumber.charAt(5) + "-" + phoneNumber.charAt(6) +phoneNumber.charAt(7) +phoneNumber.charAt(8)+phoneNumber.charAt(9) );
 	}
 
-
-
-
-
-
-
     /**
 	 *
 	 * Get : the contestant's first name.
 	 * @return  String FirstName
+	 * 
 	 */
-
 
 	public String getFirstName() 
 
@@ -299,8 +338,6 @@ public class ContestantInformation {
 		return this.firstName;
 	}
 	
-
-
 	/**
 	 *
 	 * Get : the contestant's Last name.
@@ -314,9 +351,6 @@ public class ContestantInformation {
 
 	}
 
-
-
-	
 	/**
 	 *
 	 * Get : the contestant's Age.
@@ -329,6 +363,19 @@ public class ContestantInformation {
              return this.ageNumber;
 
 	}
+	
+	 
+	
+	/**
+	 * 
+	 * Get: the contestants gender
+	 * @return String gender
+	 */
+	public String getGender()
+	 
+	 {
+		 return this.gender;
+	 }
 
 	/**
 	 *
@@ -343,8 +390,6 @@ public class ContestantInformation {
 
 	}
 
-
-
 	/**
 	 *
 	 * Get : the contestant's Street Address.
@@ -357,8 +402,6 @@ public class ContestantInformation {
              return this.streetAdress;
 
 	}
-
-
 
 	/**
 	 *
@@ -425,17 +468,75 @@ public class ContestantInformation {
 
 	}
 	
+	/**
+	 *
+	 * @ Override toString
+	 * @return  all concatenated variables
+	 */
 	
 	public  String toString()
 
 	{
 
-		String formattedInformation = (firstName + " " + lastName + " " + ageNumber + " " + birthDate + " " + apartmentNumber + " " + streetAdress + " " + city + " " + provinceName + " " + postalCode + " " + phoneNumber);
-		return formattedInformation;
+		return  (firstName + " " + lastName + " " + ageNumber + " " + birthDate + " " + apartmentNumber + " " + streetAdress + " " + city + " " + provinceName + " " + postalCode + " " + phoneNumber);
+		
 
+	}
+	
+	/**
+	 *
+	 * @ Override equals
+	 * 
+	 */
+	
+	public boolean equals(ContestantInformation ci)
+	{
+		
+		if (ci.getFirstName().equals(this.firstName) && (ci.getLastName().equals(this.lastName)))
+		{
+			return true;
+		}
+		
+		
+		
+		return false;
+		
+	
+	}
+	
+	/**
+	 *
+	 * @ Override compareTo
+	 * 
+	 */
+	
+	public int compareTo(Object arg0)
+	{
+		
+		ContestantInformation ci= (ContestantInformation)arg0;
+		if ( ci.getFirstName().compareTo(this.firstName) == 0)
+		{
+			return 0;
+			
+		}
+		
+		else if ( ci.getFirstName().compareTo(this.firstName) > 0)
+		{
+			return 1; 
+			
+		}
+		
+		else // ( ci.getFirstName().compareTo(ci2.getFirstName()) < 0)
+		{
+			return -1;
+		}
+	
+		
+		
 	}
 
 
+	
 
 }
 	

@@ -53,14 +53,19 @@ public class Label {
 
 	/**
 	 * 
-	 * @return String Address
+	 * @return String
 	 */
 	private String formatAdress()
 
 	{
-		return ( "\n" + ci1.getApartmentNumber() + " " + ci1.getStreetAdress()+ " \n"  + ci1.getCity() +  ", " +ci1.getProvinceName()+ "\n " + ci1.getPostalCode() );
+		return ( "\n" + ci1.getApartmentNumber() + " " + ci1.getStreetAdress()+ " \n"  + ci1.getCity() +  ", " +ci1.getProvinceName()+ "\n" + ci1.getPostalCode() );
 
 	}
+	
+	/**
+	 * 
+	 * @return ci1.getBirthDate
+	 */
 
 	private String formatBirth()
 
@@ -68,6 +73,11 @@ public class Label {
 		return ( "\n" + ci1.getBirthDate());
 		
 	}
+	
+	/**
+	 * 
+	 * @return ci1.getAge
+	 */
 
 
 	private String formatAge()
@@ -76,12 +86,22 @@ public class Label {
 		
 	}
 	
+	/**
+	 * 
+	 * @return ci1.getPhoneNumber
+	 */
+	
 	private String formatPhoneNumber()
 	
 	{
 		return ( "\n" + ci1.getPhoneNumber());
 		
 	}
+	
+	/**
+	 * 
+	 * @return concatenated String
+	 */
 	
 	public String toString()
 	
