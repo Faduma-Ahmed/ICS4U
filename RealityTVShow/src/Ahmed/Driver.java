@@ -8,7 +8,8 @@ import Ahmed.Search;
  * This is the test class to check if the binary and linear searches are working
  * properly within an array/arrayList by using a target value
  * 
- * @author Faduma Ahmed Sept 28, 2015
+ * @author Faduma Ahmed 
+ * Sept 28 - november 11 , 2015
  * 
  */
 

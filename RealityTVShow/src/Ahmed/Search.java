@@ -9,7 +9,8 @@ import Ahmed.ContestantInformation;
  * and verifies their eligibility This class searches and finds specified users
  * within an array/arrayList by using a target value
  * 
- * @author Faduma Ahmed Sept 28, 2015
+ * @author Faduma Ahmed 
+ *Sept 28 - november 11 , 2015
  * 
  */
 

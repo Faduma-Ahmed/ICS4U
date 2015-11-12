@@ -8,7 +8,7 @@ package Ahmed;
  * This is a reality TV show program that formats the contestant's information and verifies their eligibility
  * this enum sets the sets variables for all the provinces and territories in Canada the user may write
  * @author Faduma Ahmed
- * * Sept 28, 2015 
+ * * SSept 28 - november 11 , 2015 
  * 
 
  *

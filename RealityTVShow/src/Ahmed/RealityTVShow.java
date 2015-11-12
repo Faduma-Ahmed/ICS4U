@@ -15,7 +15,8 @@ import java.util.*;
  * and verifies their eligibility This is the main class to controll all of the
  * users desired settings
  * 
- * @author Faduma Ahmed Sept 28, 2015
+ * @author Faduma Ahmed 
+ * Sept 28 - november 11 , 2015
  * 
  *
  */

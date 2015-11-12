@@ -8,7 +8,8 @@ import java.util.Calendar;
  * This is a reality TV show program that formats the contestant's information
  * and verifies their eligibility This class formats the users info
  * 
- * @author Faduma Ahmed Sept 28, 2015
+ * @author Faduma Ahmed 
+ * Sept 28 - november 11 , 2015
  * 
  */
 
