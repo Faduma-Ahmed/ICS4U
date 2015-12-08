@@ -2,6 +2,14 @@ package Ahmed07;
 
 import java.util.Arrays;
 
+/**
+ * 
+ * The program utilizes several sort algorithms to sort an array from least top greatest  
+ * November 22-27, 2015
+ * @author Faduma Ahmed
+ *
+ */
+
 public class Driver {
 
 	public Driver() {
