@@ -16,9 +16,8 @@ public class Sort {
 	 * the smallest value, then swap it into its original place until the array
 	 * is sorted
 	 * 
-	 * @param numbers,
-	 *            the unsorted array
-	 * @return a reference to a sorted array
+	 * @param int[] the unsorted array
+	 * @return int[]  a reference to a sorted array
 	 */
 	public static int[] selectionSort(int[] numbers)
 
@@ -47,9 +46,8 @@ public class Sort {
 	 * In insertion sort, elements in an array are sorted into a sublist until
 	 * all elements are placed in their corresponding positions
 	 * 
-	 * @param numbers,
-	 *            an unsorted array
-	 * @return
+	 * @param  int[]  an unsorted array
+	 * @return  int[] the sorted array
 	 */
 	public static int[] insertionSort(int[] numbers)
 
@@ -80,8 +78,7 @@ public class Sort {
 	 * THis is a helper method that calls on a recursive method to sort the
 	 * array via Quick Sort
 	 * 
-	 * @param numbers,
-	 *            the unsorted array
+	 * @param int[] the unsorted array
 	 */
 	public static void quickSort(int[] numbers) {
 		recursiveQuickSort(numbers, 0, numbers.length - 1);
@@ -91,14 +88,11 @@ public class Sort {
 	 * This is the recursive method that sorts the two parts of an array list
 	 * using a pivot
 	 * 
-	 * @param numbers,
-	 *            the unsorted array
-	 * @param startIndex,
-	 *            the start of the array
-	 * @param endIndex,
-	 *            the end of the array
+	 * @param  int[] numbers the unsorted array
+	 * @param int startIndex the start of the array
+	 * @param int endIndex the end of the array
 	 */
-	public static void recursiveQuickSort(int[] numbers, int startIndex, int endIndex)
+	private static void recursiveQuickSort(int[] numbers, int startIndex, int endIndex)
 
 	{
 		int index = partition(numbers, startIndex, endIndex);
@@ -113,15 +107,12 @@ public class Sort {
 	}
 
 	/**
-	 * @param numbers,
-	 *            the array to be sorted
-	 * @param left
-	 *            the lower section of the array
-	 * @param right
-	 *            the upper section of the array
-	 * @return the sorted index
+	 * @param  int[] numbers the array to be sorted
+	 * @param  int left the lower section of the array
+	 * @param  int right the upper section of the array
+	 * @return int[] left the sorted index
 	 */
-	public static int partition(int[] numbers, int left, int right)
+	private static int partition(int[] numbers, int left, int right)
 
 	{
 		// makes the first element as pivot
@@ -158,9 +149,9 @@ public class Sort {
 	 * Uses bubble sort algorithm to check for lowest number and "bubble" it to
 	 * the front of the array
 	 * 
-	 * @param numbers,
+	 * @param numbers[],
 	 *            the unsorted array
-	 * @return the sorted array
+	 * @return numbers[] the sorted array
 	 */
 	public static int[] bubbleSort(int numbers[])
 
@@ -186,9 +177,9 @@ public class Sort {
 	}
 
 	/**
-	 * THis method uses merge sort as it splits the array in half and sorts them
+	 * This method uses merge sort as it splits the array in half and sorts them
 	 * 
-	 * @param numbers,
+	 * @param numbers[],
 	 *            the unsorted array
 	 */
 	public static void mergeSort(int[] numbers) {
@@ -216,14 +207,11 @@ public class Sort {
 	 * This method uses merge sort and merges the two sorted arrays together
 	 * back into its original array
 	 * 
-	 * @param left,
-	 *            the upper bound of the array
-	 * @param right,
-	 *            the lower bound of the array
-	 * @param numbers,
-	 *            the array unsorted
+	 * @param int[] left the upper bound of the array
+	 * @param int[] right the lower bound of the array
+	 * @param int[] numbers the array unsorted
 	 */
-	public static void merge(int[] left, int[] right, int[] numbers) {
+	private static void merge(int[] left, int[] right, int[] numbers) {
 		int leftSize = left.length;
 		int rightSize = right.length;
 		int i = 0, inner = 0, outer = 0;
